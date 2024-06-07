@@ -1,0 +1,18 @@
+
+<div class="cart-container" *ngIf="cartItems.length > 0; else emptyCart">
+  <div class="cart-item">
+    <div class="md-6">
+      <img [src]="cartItems[0].imageUrl" alt="{{ cartItems[0].name }}" class="item-image">
+    </div>
+    <div class="item-details">
+      <p class="item-name">Tên đơn hàng: {{ cartItems[0].name }}</p>
+      <p class="item-price">Giá: ${{ cartItems[0].price }}</p>
+      <p class="item-quantity">Số lượng: {{ cartItems.length }}</p> <!-- Hiển thị số lượng -->
+    </div>
+  </div>
+  <p class="item-total">Tổng cộng: ${{ getTotalPrice(cartItems) }}</p>
+</div>
+
+<ng-template #emptyCart>
+  <p>Your cart is empty.</p>
+</ng-template>

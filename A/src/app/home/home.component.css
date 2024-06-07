@@ -1,0 +1,43 @@
+ul{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:  wrap;
+    list-style-type: none;
+    padding: 0;
+}
+ul li a{
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display:  flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: red;
+    border: 5px solid beige;
+}
+li a:hover{
+    opacity: 0.8;
+    text-decoration: none;
+}
+.content{
+    padding: 5rem 0.5rem;
+    position: relative;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.favorite{
+    position: absolute;
+    top: 20px;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+.favorite.not{
+    color: gray;
+}
+
+.price{
+    color: gray;
+}

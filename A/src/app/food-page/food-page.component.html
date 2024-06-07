@@ -1,0 +1,114 @@
+<h2>Thông tin đặt hàng</h2>
+<div class="cart-item">
+    <style>
+        h2{
+            text-align: center;
+            margin-top: 5px;
+
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            
+        }
+
+        .cart-item img {
+            width: 400px;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: white 2px solid;
+        }
+
+        .cart-item .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-left: 10px;
+            border: beige 3px solid;
+        }
+
+        .cart-item .details .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .cart-item .details .header .name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .cart-item .details .header .favorite {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .cart-item .details .header .favorite.not {
+            color: #e0e0e0;
+        }
+
+        .cart-item .details .code-time {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #a0a0a0;
+        }
+
+        .cart-item .details .price {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .cart-item .details .quantity {
+            margin-top: 10px;
+        }
+
+        .cart-item .details .quantity input {
+            width: 50px;
+            padding: 5px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .cart-item .details button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0c040;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .cart-item .details button:hover {
+            background-color: #e0b030;
+        }
+        .cart-item .details button:active {
+            background-color: #d0a020;
+        }
+    </style>
+    <img src="{{ food.imageUrl }}" alt="{{ food.name }}">
+    <div class="details">
+        <div class="header">
+            <span class="name">{{ food.name }}</span>
+            <span class="favorite not">❤️</span>
+        </div>
+        <div class="code-time">
+            <span>🕛Time to cook about <strong>{{ food.cookTime }}</strong> Minutes</span>
+        </div>
+        <div class="price">
+            <span>{{ food.price | currency }}</span>
+        </div>
+        <div class="quantity">
+            <input #quantity_number type="number" min="1" value="1">
+            <button (click)="addToCart(+quantity_number.value)">Add to cart</button>
+        </div>
+    </div>
+</div>
